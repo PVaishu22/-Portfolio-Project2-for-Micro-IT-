@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Quiz Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="quiz-card" id="quiz-card">
+            <div class="quiz-section welcome-screen active" id="welcome-screen">
+                <h1 class="quiz-title">The Knowledge Quest</h1>
+                <p class="quiz-description">Test your wits across various topics and prove your knowledge!</p>
+                <button class="start-button" id="start-quiz-button">Start Quiz</button>
+            </div>
+
+            <div class="quiz-section question-screen" id="question-screen">
+                <div class="question-header">
+                    <span id="question-counter" class="question-counter">Question 1/10</span>
+                </div>
+                <h2 id="question-text" class="question-text"></h2>
+                <div class="options-container" id="options-container">
+                    </div>
+                <div class="navigation-buttons">
+                    <button class="nav-button prev-button" id="prev-button" disabled>Previous</button>
+                    <button class="nav-button next-button" id="next-button">Next</button>
+                    <button class="nav-button submit-button" id="submit-button">Submit Quiz</button>
+                </div>
+            </div>
+
+            <div class="quiz-section results-screen" id="results-screen">
+                <h2 class="results-title">Quiz Complete!</h2>
+                <div class="score-display">
+                    Your Score: <span id="final-score">0</span> / <span id="total-questions-display">0</span>
+                    (<span id="percentage-score">0%</span>)
+                </div>
+                <div class="feedback-message" id="feedback-message"></div>
+                <button class="review-button" id="review-answers-button">Review Answers</button>
+                <button class="restart-button" id="restart-quiz-button">Play Again</button>
+            </div>
+
+            <div class="quiz-section review-screen" id="review-screen">
+                <h2 class="review-title">Answer Review</h2>
+                <div id="review-questions-container" class="review-questions-container">
+                    </div>
+                <button class="back-to-results-button" id="back-to-results-button">Back to Results</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
